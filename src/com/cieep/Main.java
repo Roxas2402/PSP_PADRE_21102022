@@ -2,9 +2,8 @@ package com.cieep;
 
 import com.cieep.modelos.Alumno;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,13 +25,20 @@ public class Main {
                     break;
                 case 2:
                     try {
-                        cargarAlumnos(listaAlumnos);
+                        System.out.println("Dime el nombre del archivo: ");
+                        cargarAlumnos(listaAlumnos, scanner.nextLine());
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        System.out.println("Error al leer el fichero.");
                     }
                     break;
                 case 3:
-                    guardarAlumnos(listaAlumnos);
+                    System.out.println("Dime el nombre del fichero: ");
+                    try {
+                        guardarAlumnos(listaAlumnos, scanner.nextLine());
+                    } catch (IOException e) {
+                        System.out.println("Error al escribir el fichero.");
+                        throw new RuntimeException(e);
+                    }
                     break;
                 case 4:
                     muestraAlumnos(listaAlumnos);
@@ -44,15 +50,32 @@ public class Main {
 
     }
 
-    private static void cargarAlumnos(ArrayList<Alumno> listaAlumnos) throws IOException {
+    private static void cargarAlumnos(ArrayList<Alumno> listaAlumnos, String fileName) throws IOException {
         listaAlumnos.clear();
         ProcessBuilder pb = new ProcessBuilder("java", "-jar", "librerias/HijoLector.jar");
         pb.redirectErrorStream(true);
 
         Process proceso = pb.start();
-        OutputStream os = proceso.getOutputStream(); // ESTO ES PARA ESCRIBIR
+        OutputStream os = proceso.getOutputStream(); //ESTO ES PARA ESCRIBIR
         PrintStream ps = new PrintStream(os);
 
+        InputStream is = proceso.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
+        BufferedReader br = new BufferedReader(isr);
+
+        ps.println(fileName);
+        ps.flush();
+
+        if ((new File(fileName)).exists()) {
+            listaAlumnos.clear();
+        } else {
+            return;
+        }
+
+        String linea;
+        while (!(linea = br.readLine()).isEmpty()) {
+            listaAlumnos.add(new Alumno(linea));
+        }
     }
 
     private static Alumno crearAlumno(Scanner scanner) {
@@ -66,8 +89,24 @@ public class Main {
         return new Alumno(nombre, apellidos, dni);
     }
 
-    private static void guardarAlumnos(ArrayList<Alumno> listaAlumnos) {
+    private static void guardarAlumnos(ArrayList<Alumno> listaAlumnos, String fileName) throws IOException {
+        ProcessBuilder pb = new ProcessBuilder("java", "-jar", "librerias/HijoEscritor.jar");
+        pb.redirectErrorStream(true);
+        Process process = pb.start();
 
+        OutputStream os = process.getOutputStream();
+        PrintStream ps = new PrintStream(os);
+
+        ps.println(fileName);
+        ps.flush();
+
+        for (Alumno a : listaAlumnos) {
+            ps.println(a.toFile());
+            ps.flush();
+        }
+
+        ps.println();
+        ps.flush();
     }
 
     private static void muestraAlumnos(ArrayList<Alumno> listaAlumnos) {

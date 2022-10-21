@@ -3,7 +3,6 @@ package com.cieep.modelos;
 public class Alumno {
     private String nombre, apellidos, dni;
 
-    @Override
     public String toFile() {
         return nombre + ";" + apellidos + ";" + dni;
     }

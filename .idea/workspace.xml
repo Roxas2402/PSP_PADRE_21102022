@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49f10dab-752c-4639-b9b2-29710d62a757" name="Changes" comment="">
+    <list default="true" id="49f10dab-752c-4639-b9b2-29710d62a757" name="Changes" comment="aaa">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/librerias/HijoLector.jar" beforeDir="false" afterPath="$PROJECT_DIR$/librerias/HijoLector.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cieep/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cieep/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cieep/modelos/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cieep/modelos/Alumno.java" afterDir="false" />
     </list>
@@ -20,21 +24,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/cieep/Main.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GRsdq0Owd6CHTYyBwWAhQrqWdV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/roxas/OneDrive - CIEEP Progresa/2022-2023/Programación de Servicios y Procesos/Primer Trimestre/21102022/Ejercicio1/Padre/librerias"
+    "last_opened_file_path": "/Users/roxas/OneDrive - CIEEP Progresa/2022-2023/Programación de Servicios y Procesos/Primer Trimestre/21102022/Ejercicio1/Padre/librerias",
+    "settings.editor.selected.configurable": "editing.templates"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -50,8 +63,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666362822669</updated>
-      <workItem from="1666362824418" duration="1707000" />
+      <workItem from="1666362824418" duration="3692000" />
     </task>
+    <task id="LOCAL-00001" summary="aaa">
+      <created>1666364550281</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666364550281</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -67,5 +88,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="aaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aaa" />
   </component>
 </project>
